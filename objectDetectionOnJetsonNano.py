@@ -11,7 +11,6 @@ from utils import label_map_util
 IM_WIDTH = 720
 IM_HEIGHT = 540
 
-# Funcion que retorna handler de la camara RPI
 def gstreamer_pipeline (capture_width=IM_WIDTH, capture_height=IM_HEIGHT, display_width=IM_WIDTH, display_height=IM_HEIGHT, framerate=5, flip_method=0) :   
     return ('nvarguscamerasrc ! ' 
     'video/x-raw(memory:NVMM), '
@@ -30,8 +29,6 @@ NUM_CLASSES = 4
 CWD_PATH = os.getcwd()
 
 PATH_TO_CKPT = os.path.join(CWD_PATH, MODEL_NAME, 'frozen_inference_graph.pb')
-#PATH_TO_CKPT = os.path.join(CWD_PATH, MODEL_NAME, 'frozen_inference_graph_LOSS_1,5.pb')
-
 PATH_TO_LABELS = os.path.join(CWD_PATH, MODEL_NAME, LABELS)
 
 label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
@@ -78,7 +75,7 @@ if cap.isOpened():
 frameCount = 0
 minScore = 0.4
 
-while cv2.getWindowProperty(WIN_NAME,0) >= 0:
+while cv2.getWindowProperty(WIN_NAME, 0) >= 0:
 
     t1 = cv2.getTickCount()
 
@@ -105,10 +102,9 @@ while cv2.getWindowProperty(WIN_NAME,0) >= 0:
         category_index,
         use_normalized_coordinates=True,
         line_thickness=8,
-        #min_score_thresh=0.40)
         min_score_thresh=minScore)
 
-    cv2.putText(frame,"FPS: {0:.2f}".format(frame_rate_calc),(30,50),font,1,(255,255,0),2,cv2.LINE_AA)
+    cv2.putText(frame,"FPS: {0:.2f}".format(frame_rate_calc), (30, 50), font, 1, (255, 255, 0), 2, cv2.LINE_AA)
     cv2.imshow(WIN_NAME, frame)
 
     t2 = cv2.getTickCount()
