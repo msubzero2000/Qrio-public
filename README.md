@@ -6,6 +6,4 @@ Follow the full blog here
 
 [Link is coming soon]
 
-Agustinus (Gus) Nalwan
-You can find me on
-https://www.linkedin.com/in/agustinus-nalwan
+Agustinus (Gus) Nalwan - https://www.linkedin.com/in/agustinus-nalwan
