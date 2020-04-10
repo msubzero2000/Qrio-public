@@ -4,6 +4,6 @@ This is the code repository for the Qrio project, an AI driven Bot which can rec
 
 Follow the full blog here
 
-[Link is coming soon]
+https://towardsdatascience.com/building-a-bot-that-plays-videos-for-my-toddler-597330d0005e
 
 Agustinus (Gus) Nalwan - https://www.linkedin.com/in/agustinus-nalwan
